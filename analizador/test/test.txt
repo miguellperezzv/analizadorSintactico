@@ -1,0 +1,6 @@
+CREATE PROCEDURE insert_data 
+LANGUAGE SQL 
+AS $$ 
+INSERT INTO table_uno VALUES (1,3); 
+SELECT value1, value2 FROM tabla1 WHERE id LIKE "VC";
+$$;
