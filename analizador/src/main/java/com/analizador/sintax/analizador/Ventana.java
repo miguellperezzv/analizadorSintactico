@@ -129,7 +129,7 @@ public class Ventana extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		
 		String texto = txtArea.getText();
-		File archivo = new File("C:/Users/luisy/workspace/analizador/test/test.txt"); // este es el archivo que insertaras caracteres
+		File archivo = new File("C:/Users/luisy/git/analizador/analizador/test/test.txt"); // este es el archivo que insertaras caracteres
 		
 		
 			FileWriter escribir;
