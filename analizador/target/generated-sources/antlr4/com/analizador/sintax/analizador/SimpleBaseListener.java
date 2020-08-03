@@ -1,8 +1,7 @@
-// Generated from Simple.g4 by ANTLR 4.4
+// Generated from com\analizador\sintax\analizador\Simple.g4 by ANTLR 4.5.1
 package com.analizador.sintax.analizador;
 
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
@@ -17,156 +16,156 @@ public class SimpleBaseListener implements SimpleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInsertSQL(@NotNull SimpleParser.InsertSQLContext ctx) { }
+	@Override public void enterProcedure(SimpleParser.ProcedureContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInsertSQL(@NotNull SimpleParser.InsertSQLContext ctx) { }
+	@Override public void exitProcedure(SimpleParser.ProcedureContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpresion(@NotNull SimpleParser.ExpresionContext ctx) { }
+	@Override public void enterSentenciaSQL(SimpleParser.SentenciaSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpresion(@NotNull SimpleParser.ExpresionContext ctx) { }
+	@Override public void exitSentenciaSQL(SimpleParser.SentenciaSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValorestabla(@NotNull SimpleParser.ValorestablaContext ctx) { }
+	@Override public void enterSelectSQL(SimpleParser.SelectSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValorestabla(@NotNull SimpleParser.ValorestablaContext ctx) { }
+	@Override public void exitSelectSQL(SimpleParser.SelectSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparativoNumerico(@NotNull SimpleParser.ComparativoNumericoContext ctx) { }
+	@Override public void enterDeleteSQL(SimpleParser.DeleteSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparativoNumerico(@NotNull SimpleParser.ComparativoNumericoContext ctx) { }
+	@Override public void exitDeleteSQL(SimpleParser.DeleteSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSentenciaSQL(@NotNull SimpleParser.SentenciaSQLContext ctx) { }
+	@Override public void enterInsertSQL(SimpleParser.InsertSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSentenciaSQL(@NotNull SimpleParser.SentenciaSQLContext ctx) { }
+	@Override public void exitInsertSQL(SimpleParser.InsertSQLContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterValores(@NotNull SimpleParser.ValoresContext ctx) { }
+	@Override public void enterValores(SimpleParser.ValoresContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitValores(@NotNull SimpleParser.ValoresContext ctx) { }
+	@Override public void exitValores(SimpleParser.ValoresContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSelectSQL(@NotNull SimpleParser.SelectSQLContext ctx) { }
+	@Override public void enterValorestabla(SimpleParser.ValorestablaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSelectSQL(@NotNull SimpleParser.SelectSQLContext ctx) { }
+	@Override public void exitValorestabla(SimpleParser.ValorestablaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProcedure(@NotNull SimpleParser.ProcedureContext ctx) { }
+	@Override public void enterCondicion(SimpleParser.CondicionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProcedure(@NotNull SimpleParser.ProcedureContext ctx) { }
+	@Override public void exitCondicion(SimpleParser.CondicionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeleteSQL(@NotNull SimpleParser.DeleteSQLContext ctx) { }
+	@Override public void enterComparativoNumerico(SimpleParser.ComparativoNumericoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeleteSQL(@NotNull SimpleParser.DeleteSQLContext ctx) { }
+	@Override public void exitComparativoNumerico(SimpleParser.ComparativoNumericoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondicion(@NotNull SimpleParser.CondicionContext ctx) { }
+	@Override public void enterComparativoCadena(SimpleParser.ComparativoCadenaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondicion(@NotNull SimpleParser.CondicionContext ctx) { }
+	@Override public void exitComparativoCadena(SimpleParser.ComparativoCadenaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterComparativoCadena(@NotNull SimpleParser.ComparativoCadenaContext ctx) { }
+	@Override public void enterExpresion(SimpleParser.ExpresionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitComparativoCadena(@NotNull SimpleParser.ComparativoCadenaContext ctx) { }
+	@Override public void exitExpresion(SimpleParser.ExpresionContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void enterEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEveryRule(@NotNull ParserRuleContext ctx) { }
+	@Override public void exitEveryRule(ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitTerminal(@NotNull TerminalNode node) { }
+	@Override public void visitTerminal(TerminalNode node) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitErrorNode(@NotNull ErrorNode node) { }
+	@Override public void visitErrorNode(ErrorNode node) { }
 }

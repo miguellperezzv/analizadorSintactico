@@ -8,7 +8,7 @@ PROCEDURE_DEL P_COMA;
 sentenciaSQL: insertSQL | deleteSQL | selectSQL;
 
 selectSQL: SELECT (ALL | valorestabla  ) 
-FROM VAR (P_COMA | condicion)
+FROM VAR (P_COMA | condicion P_COMA)
 
 {System.out.println("SENTENCIA SQL SELECT");};
 
@@ -21,11 +21,11 @@ insertSQL: INSERT INTO VAR VALUES P_OPEN valores P_CLOSE P_COMA
 ;
 
 
-valores: ((NUMERO | VAR | CADENA ) COMA)* (NUMERO|VAR|CADENA);
+valores: ((NUMERO | CADENA ) COMA)* (NUMERO|CADENA);
 valorestabla : ((VAR COMA)* VAR) | P_OPEN((VAR COMA)* VAR) P_CLOSE ;
 condicion : WHERE (VAR comparativoNumerico | comparativoCadena  P_COMA);
-comparativoNumerico : VAR (IGUAL | MENORQUE| MAYORQUE | MENORIGUALQUE | MAYORIGUALQUE | DIFERENTE) NUMERO;
-comparativoCadena : VAR (IGUAL | LIKE) CADENA;
+comparativoNumerico :  (IGUAL | MENORQUE| MAYORQUE | MENORIGUALQUE | MAYORIGUALQUE | DIFERENTE) NUMERO;
+comparativoCadena :  (IGUAL | LIKE) CADENA;
 
 expresion returns [Object value] : 
 

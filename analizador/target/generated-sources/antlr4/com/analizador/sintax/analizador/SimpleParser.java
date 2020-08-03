@@ -1,4 +1,4 @@
-// Generated from Simple.g4 by ANTLR 4.4
+// Generated from com\analizador\sintax\analizador\Simple.g4 by ANTLR 4.5.1
 package com.analizador.sintax.analizador;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class SimpleParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.4", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.5.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -22,13 +22,6 @@ public class SimpleParser extends Parser {
 		LIKE=18, IGUAL=19, MENORQUE=20, MENORIGUALQUE=21, MAYORIGUALQUE=22, MAYORQUE=23, 
 		DIFERENTE=24, P_OPEN=25, P_CLOSE=26, L_OPEN=27, L_CLOSE=28, COMA=29, P_COMA=30, 
 		COMILLA=31, PROCEDURE_DEL=32, VAR=33, CADENA=34, NUMERO=35, ESPACIO=36;
-	public static final String[] tokenNames = {
-		"<INVALID>", "'SELECT'", "'DELETE'", "'INSERT'", "'VALUES'", "'FROM'", 
-		"'INTO'", "'CREATE'", "'PROCEDURE'", "'*'", "'WHERE'", "'AS'", "'GO'", 
-		"'LANGUAGE'", "'SQL'", "'AND'", "'OR'", "'NOT'", "'LIKE'", "'='", "'<'", 
-		"'<='", "'>='", "'>'", "'!='", "'('", "')'", "'{'", "'}'", "','", "';'", 
-		"'\"'", "'$$'", "VAR", "CADENA", "NUMERO", "ESPACIO"
-	};
 	public static final int
 		RULE_procedure = 0, RULE_sentenciaSQL = 1, RULE_selectSQL = 2, RULE_deleteSQL = 3, 
 		RULE_insertSQL = 4, RULE_valores = 5, RULE_valorestabla = 6, RULE_condicion = 7, 
@@ -39,11 +32,54 @@ public class SimpleParser extends Parser {
 		"expresion"
 	};
 
-	@Override
-	public String getGrammarFileName() { return "Simple.g4"; }
+	private static final String[] _LITERAL_NAMES = {
+		null, "'SELECT'", "'DELETE'", "'INSERT'", "'VALUES'", "'FROM'", "'INTO'", 
+		"'CREATE'", "'PROCEDURE'", "'*'", "'WHERE'", "'AS'", "'GO'", "'LANGUAGE'", 
+		"'SQL'", "'AND'", "'OR'", "'NOT'", "'LIKE'", "'='", "'<'", "'<='", "'>='", 
+		"'>'", "'!='", "'('", "')'", "'{'", "'}'", "','", "';'", "'\"'", "'$$'"
+	};
+	private static final String[] _SYMBOLIC_NAMES = {
+		null, "SELECT", "DELETE", "INSERT", "VALUES", "FROM", "INTO", "CREATE", 
+		"PROCEDURE", "ALL", "WHERE", "AS", "GO", "LENGUAJE", "SQL", "AND", "OR", 
+		"NOT", "LIKE", "IGUAL", "MENORQUE", "MENORIGUALQUE", "MAYORIGUALQUE", 
+		"MAYORQUE", "DIFERENTE", "P_OPEN", "P_CLOSE", "L_OPEN", "L_CLOSE", "COMA", 
+		"P_COMA", "COMILLA", "PROCEDURE_DEL", "VAR", "CADENA", "NUMERO", "ESPACIO"
+	};
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
 
 	@Override
-	public String[] getTokenNames() { return tokenNames; }
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "Simple.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -59,22 +95,22 @@ public class SimpleParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 	public static class ProcedureContext extends ParserRuleContext {
+		public TerminalNode CREATE() { return getToken(SimpleParser.CREATE, 0); }
+		public TerminalNode PROCEDURE() { return getToken(SimpleParser.PROCEDURE, 0); }
+		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
+		public TerminalNode LENGUAJE() { return getToken(SimpleParser.LENGUAJE, 0); }
+		public TerminalNode SQL() { return getToken(SimpleParser.SQL, 0); }
+		public TerminalNode AS() { return getToken(SimpleParser.AS, 0); }
+		public List<TerminalNode> PROCEDURE_DEL() { return getTokens(SimpleParser.PROCEDURE_DEL); }
+		public TerminalNode PROCEDURE_DEL(int i) {
+			return getToken(SimpleParser.PROCEDURE_DEL, i);
+		}
+		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
 		public List<SentenciaSQLContext> sentenciaSQL() {
 			return getRuleContexts(SentenciaSQLContext.class);
 		}
-		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
 		public SentenciaSQLContext sentenciaSQL(int i) {
 			return getRuleContext(SentenciaSQLContext.class,i);
-		}
-		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
-		public TerminalNode SQL() { return getToken(SimpleParser.SQL, 0); }
-		public TerminalNode PROCEDURE() { return getToken(SimpleParser.PROCEDURE, 0); }
-		public List<TerminalNode> PROCEDURE_DEL() { return getTokens(SimpleParser.PROCEDURE_DEL); }
-		public TerminalNode CREATE() { return getToken(SimpleParser.CREATE, 0); }
-		public TerminalNode LENGUAJE() { return getToken(SimpleParser.LENGUAJE, 0); }
-		public TerminalNode AS() { return getToken(SimpleParser.AS, 0); }
-		public TerminalNode PROCEDURE_DEL(int i) {
-			return getToken(SimpleParser.PROCEDURE_DEL, i);
 		}
 		public ProcedureContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -88,6 +124,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitProcedure(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitProcedure(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ProcedureContext procedure() throws RecognitionException {
@@ -97,28 +138,38 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(22); match(CREATE);
-			setState(23); match(PROCEDURE);
-			setState(24); match(VAR);
-			setState(25); match(LENGUAJE);
-			setState(26); match(SQL);
-			setState(27); match(AS);
-			setState(28); match(PROCEDURE_DEL);
+			setState(22);
+			match(CREATE);
+			setState(23);
+			match(PROCEDURE);
+			setState(24);
+			match(VAR);
+			setState(25);
+			match(LENGUAJE);
+			setState(26);
+			match(SQL);
+			setState(27);
+			match(AS);
+			setState(28);
+			match(PROCEDURE_DEL);
 			setState(32);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << SELECT) | (1L << DELETE) | (1L << INSERT))) != 0)) {
 				{
 				{
-				setState(29); sentenciaSQL();
+				setState(29);
+				sentenciaSQL();
 				}
 				}
 				setState(34);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(35); match(PROCEDURE_DEL);
-			setState(36); match(P_COMA);
+			setState(35);
+			match(PROCEDURE_DEL);
+			setState(36);
+			match(P_COMA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -133,11 +184,11 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class SentenciaSQLContext extends ParserRuleContext {
-		public DeleteSQLContext deleteSQL() {
-			return getRuleContext(DeleteSQLContext.class,0);
-		}
 		public InsertSQLContext insertSQL() {
 			return getRuleContext(InsertSQLContext.class,0);
+		}
+		public DeleteSQLContext deleteSQL() {
+			return getRuleContext(DeleteSQLContext.class,0);
 		}
 		public SelectSQLContext selectSQL() {
 			return getRuleContext(SelectSQLContext.class,0);
@@ -154,6 +205,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitSentenciaSQL(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitSentenciaSQL(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SentenciaSQLContext sentenciaSQL() throws RecognitionException {
@@ -165,19 +221,22 @@ public class SimpleParser extends Parser {
 			case INSERT:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(38); insertSQL();
+				setState(38);
+				insertSQL();
 				}
 				break;
 			case DELETE:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(39); deleteSQL();
+				setState(39);
+				deleteSQL();
 				}
 				break;
 			case SELECT:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(40); selectSQL();
+				setState(40);
+				selectSQL();
 				}
 				break;
 			default:
@@ -196,17 +255,17 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class SelectSQLContext extends ParserRuleContext {
+		public TerminalNode SELECT() { return getToken(SimpleParser.SELECT, 0); }
+		public TerminalNode FROM() { return getToken(SimpleParser.FROM, 0); }
+		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
+		public TerminalNode ALL() { return getToken(SimpleParser.ALL, 0); }
 		public ValorestablaContext valorestabla() {
 			return getRuleContext(ValorestablaContext.class,0);
 		}
-		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
+		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
 		public CondicionContext condicion() {
 			return getRuleContext(CondicionContext.class,0);
 		}
-		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
-		public TerminalNode FROM() { return getToken(SimpleParser.FROM, 0); }
-		public TerminalNode SELECT() { return getToken(SimpleParser.SELECT, 0); }
-		public TerminalNode ALL() { return getToken(SimpleParser.ALL, 0); }
 		public SelectSQLContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -219,6 +278,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitSelectSQL(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitSelectSQL(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final SelectSQLContext selectSQL() throws RecognitionException {
@@ -227,35 +291,44 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43); match(SELECT);
+			setState(43);
+			match(SELECT);
 			setState(46);
 			switch (_input.LA(1)) {
 			case ALL:
 				{
-				setState(44); match(ALL);
+				setState(44);
+				match(ALL);
 				}
 				break;
 			case P_OPEN:
 			case VAR:
 				{
-				setState(45); valorestabla();
+				setState(45);
+				valorestabla();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			setState(48); match(FROM);
-			setState(49); match(VAR);
-			setState(52);
+			setState(48);
+			match(FROM);
+			setState(49);
+			match(VAR);
+			setState(54);
 			switch (_input.LA(1)) {
 			case P_COMA:
 				{
-				setState(50); match(P_COMA);
+				setState(50);
+				match(P_COMA);
 				}
 				break;
 			case WHERE:
 				{
-				setState(51); condicion();
+				setState(51);
+				condicion();
+				setState(52);
+				match(P_COMA);
 				}
 				break;
 			default:
@@ -276,16 +349,16 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class DeleteSQLContext extends ParserRuleContext {
-		public List<TerminalNode> VAR() { return getTokens(SimpleParser.VAR); }
 		public TerminalNode DELETE() { return getToken(SimpleParser.DELETE, 0); }
-		public TerminalNode NUMERO() { return getToken(SimpleParser.NUMERO, 0); }
-		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
+		public TerminalNode FROM() { return getToken(SimpleParser.FROM, 0); }
+		public List<TerminalNode> VAR() { return getTokens(SimpleParser.VAR); }
 		public TerminalNode VAR(int i) {
 			return getToken(SimpleParser.VAR, i);
 		}
 		public TerminalNode WHERE() { return getToken(SimpleParser.WHERE, 0); }
-		public TerminalNode FROM() { return getToken(SimpleParser.FROM, 0); }
 		public TerminalNode IGUAL() { return getToken(SimpleParser.IGUAL, 0); }
+		public TerminalNode NUMERO() { return getToken(SimpleParser.NUMERO, 0); }
+		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
 		public DeleteSQLContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -298,6 +371,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitDeleteSQL(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitDeleteSQL(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final DeleteSQLContext deleteSQL() throws RecognitionException {
@@ -306,14 +384,22 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(56); match(DELETE);
-			setState(57); match(FROM);
-			setState(58); match(VAR);
-			setState(59); match(WHERE);
-			setState(60); match(VAR);
-			setState(61); match(IGUAL);
-			setState(62); match(NUMERO);
-			setState(63); match(P_COMA);
+			setState(58);
+			match(DELETE);
+			setState(59);
+			match(FROM);
+			setState(60);
+			match(VAR);
+			setState(61);
+			match(WHERE);
+			setState(62);
+			match(VAR);
+			setState(63);
+			match(IGUAL);
+			setState(64);
+			match(NUMERO);
+			setState(65);
+			match(P_COMA);
 			System.out.println("SENTENCIA SQL DELETE");
 			}
 		}
@@ -329,16 +415,16 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class InsertSQLContext extends ParserRuleContext {
+		public TerminalNode INSERT() { return getToken(SimpleParser.INSERT, 0); }
+		public TerminalNode INTO() { return getToken(SimpleParser.INTO, 0); }
+		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
+		public TerminalNode VALUES() { return getToken(SimpleParser.VALUES, 0); }
+		public TerminalNode P_OPEN() { return getToken(SimpleParser.P_OPEN, 0); }
 		public ValoresContext valores() {
 			return getRuleContext(ValoresContext.class,0);
 		}
-		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
-		public TerminalNode VALUES() { return getToken(SimpleParser.VALUES, 0); }
-		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
 		public TerminalNode P_CLOSE() { return getToken(SimpleParser.P_CLOSE, 0); }
-		public TerminalNode INSERT() { return getToken(SimpleParser.INSERT, 0); }
-		public TerminalNode P_OPEN() { return getToken(SimpleParser.P_OPEN, 0); }
-		public TerminalNode INTO() { return getToken(SimpleParser.INTO, 0); }
+		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
 		public InsertSQLContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -351,6 +437,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitInsertSQL(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitInsertSQL(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final InsertSQLContext insertSQL() throws RecognitionException {
@@ -359,14 +450,22 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(66); match(INSERT);
-			setState(67); match(INTO);
-			setState(68); match(VAR);
-			setState(69); match(VALUES);
-			setState(70); match(P_OPEN);
-			setState(71); valores();
-			setState(72); match(P_CLOSE);
-			setState(73); match(P_COMA);
+			setState(68);
+			match(INSERT);
+			setState(69);
+			match(INTO);
+			setState(70);
+			match(VAR);
+			setState(71);
+			match(VALUES);
+			setState(72);
+			match(P_OPEN);
+			setState(73);
+			valores();
+			setState(74);
+			match(P_CLOSE);
+			setState(75);
+			match(P_COMA);
 			System.out.println("SENTENCIA SQL INSERT");
 			}
 		}
@@ -382,21 +481,17 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class ValoresContext extends ParserRuleContext {
-		public List<TerminalNode> VAR() { return getTokens(SimpleParser.VAR); }
 		public List<TerminalNode> NUMERO() { return getTokens(SimpleParser.NUMERO); }
-		public List<TerminalNode> CADENA() { return getTokens(SimpleParser.CADENA); }
-		public TerminalNode COMA(int i) {
-			return getToken(SimpleParser.COMA, i);
-		}
-		public TerminalNode VAR(int i) {
-			return getToken(SimpleParser.VAR, i);
-		}
-		public List<TerminalNode> COMA() { return getTokens(SimpleParser.COMA); }
 		public TerminalNode NUMERO(int i) {
 			return getToken(SimpleParser.NUMERO, i);
 		}
+		public List<TerminalNode> CADENA() { return getTokens(SimpleParser.CADENA); }
 		public TerminalNode CADENA(int i) {
 			return getToken(SimpleParser.CADENA, i);
+		}
+		public List<TerminalNode> COMA() { return getTokens(SimpleParser.COMA); }
+		public TerminalNode COMA(int i) {
+			return getToken(SimpleParser.COMA, i);
 		}
 		public ValoresContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -410,6 +505,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitValores(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitValores(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ValoresContext valores() throws RecognitionException {
@@ -420,33 +520,36 @@ public class SimpleParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(80);
+			setState(82);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(76);
+					setState(78);
 					_la = _input.LA(1);
-					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << CADENA) | (1L << NUMERO))) != 0)) ) {
+					if ( !(_la==CADENA || _la==NUMERO) ) {
 					_errHandler.recoverInline(this);
+					} else {
+						consume();
 					}
-					consume();
-					setState(77); match(COMA);
+					setState(79);
+					match(COMA);
 					}
 					} 
 				}
-				setState(82);
+				setState(84);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,4,_ctx);
 			}
-			setState(83);
+			setState(85);
 			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << VAR) | (1L << CADENA) | (1L << NUMERO))) != 0)) ) {
+			if ( !(_la==CADENA || _la==NUMERO) ) {
 			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -462,15 +565,15 @@ public class SimpleParser extends Parser {
 
 	public static class ValorestablaContext extends ParserRuleContext {
 		public List<TerminalNode> VAR() { return getTokens(SimpleParser.VAR); }
-		public TerminalNode COMA(int i) {
-			return getToken(SimpleParser.COMA, i);
-		}
 		public TerminalNode VAR(int i) {
 			return getToken(SimpleParser.VAR, i);
 		}
-		public TerminalNode P_CLOSE() { return getToken(SimpleParser.P_CLOSE, 0); }
 		public List<TerminalNode> COMA() { return getTokens(SimpleParser.COMA); }
+		public TerminalNode COMA(int i) {
+			return getToken(SimpleParser.COMA, i);
+		}
 		public TerminalNode P_OPEN() { return getToken(SimpleParser.P_OPEN, 0); }
+		public TerminalNode P_CLOSE() { return getToken(SimpleParser.P_CLOSE, 0); }
 		public ValorestablaContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -483,6 +586,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitValorestabla(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitValorestabla(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ValorestablaContext valorestabla() throws RecognitionException {
@@ -490,56 +598,64 @@ public class SimpleParser extends Parser {
 		enterRule(_localctx, 12, RULE_valorestabla);
 		try {
 			int _alt;
-			setState(104);
+			setState(106);
 			switch (_input.LA(1)) {
 			case VAR:
 				enterOuterAlt(_localctx, 1);
 				{
 				{
-				setState(89);
+				setState(91);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(85); match(VAR);
-						setState(86); match(COMA);
+						setState(87);
+						match(VAR);
+						setState(88);
+						match(COMA);
 						}
 						} 
 					}
-					setState(91);
+					setState(93);
 					_errHandler.sync(this);
 					_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 				}
-				setState(92); match(VAR);
+				setState(94);
+				match(VAR);
 				}
 				}
 				break;
 			case P_OPEN:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(93); match(P_OPEN);
+				setState(95);
+				match(P_OPEN);
 				{
-				setState(98);
+				setState(100);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 				while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 					if ( _alt==1 ) {
 						{
 						{
-						setState(94); match(VAR);
-						setState(95); match(COMA);
+						setState(96);
+						match(VAR);
+						setState(97);
+						match(COMA);
 						}
 						} 
 					}
-					setState(100);
+					setState(102);
 					_errHandler.sync(this);
 					_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
 				}
-				setState(101); match(VAR);
+				setState(103);
+				match(VAR);
 				}
-				setState(103); match(P_CLOSE);
+				setState(105);
+				match(P_CLOSE);
 				}
 				break;
 			default:
@@ -558,15 +674,15 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class CondicionContext extends ParserRuleContext {
-		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
-		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
 		public TerminalNode WHERE() { return getToken(SimpleParser.WHERE, 0); }
+		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
 		public ComparativoNumericoContext comparativoNumerico() {
 			return getRuleContext(ComparativoNumericoContext.class,0);
 		}
 		public ComparativoCadenaContext comparativoCadena() {
 			return getRuleContext(ComparativoCadenaContext.class,0);
 		}
+		public TerminalNode P_COMA() { return getToken(SimpleParser.P_COMA, 0); }
 		public CondicionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -579,6 +695,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitCondicion(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitCondicion(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final CondicionContext condicion() throws RecognitionException {
@@ -587,21 +708,29 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(106); match(WHERE);
-			setState(112);
-			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
-			case 1:
+			setState(108);
+			match(WHERE);
+			setState(114);
+			switch (_input.LA(1)) {
+			case VAR:
 				{
-				setState(107); match(VAR);
-				setState(108); comparativoNumerico();
+				setState(109);
+				match(VAR);
+				setState(110);
+				comparativoNumerico();
 				}
 				break;
-			case 2:
+			case LIKE:
+			case IGUAL:
 				{
-				setState(109); comparativoCadena();
-				setState(110); match(P_COMA);
+				setState(111);
+				comparativoCadena();
+				setState(112);
+				match(P_COMA);
 				}
 				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 			}
 		}
@@ -617,14 +746,13 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class ComparativoNumericoContext extends ParserRuleContext {
+		public TerminalNode NUMERO() { return getToken(SimpleParser.NUMERO, 0); }
+		public TerminalNode IGUAL() { return getToken(SimpleParser.IGUAL, 0); }
 		public TerminalNode MENORQUE() { return getToken(SimpleParser.MENORQUE, 0); }
+		public TerminalNode MAYORQUE() { return getToken(SimpleParser.MAYORQUE, 0); }
 		public TerminalNode MENORIGUALQUE() { return getToken(SimpleParser.MENORIGUALQUE, 0); }
 		public TerminalNode MAYORIGUALQUE() { return getToken(SimpleParser.MAYORIGUALQUE, 0); }
-		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
-		public TerminalNode NUMERO() { return getToken(SimpleParser.NUMERO, 0); }
-		public TerminalNode MAYORQUE() { return getToken(SimpleParser.MAYORQUE, 0); }
 		public TerminalNode DIFERENTE() { return getToken(SimpleParser.DIFERENTE, 0); }
-		public TerminalNode IGUAL() { return getToken(SimpleParser.IGUAL, 0); }
 		public ComparativoNumericoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -637,6 +765,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitComparativoNumerico(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitComparativoNumerico(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ComparativoNumericoContext comparativoNumerico() throws RecognitionException {
@@ -646,14 +779,15 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(114); match(VAR);
-			setState(115);
+			setState(116);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << IGUAL) | (1L << MENORQUE) | (1L << MENORIGUALQUE) | (1L << MAYORIGUALQUE) | (1L << MAYORQUE) | (1L << DIFERENTE))) != 0)) ) {
 			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-			consume();
-			setState(116); match(NUMERO);
+			setState(117);
+			match(NUMERO);
 			}
 		}
 		catch (RecognitionException re) {
@@ -668,10 +802,9 @@ public class SimpleParser extends Parser {
 	}
 
 	public static class ComparativoCadenaContext extends ParserRuleContext {
-		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
 		public TerminalNode CADENA() { return getToken(SimpleParser.CADENA, 0); }
-		public TerminalNode LIKE() { return getToken(SimpleParser.LIKE, 0); }
 		public TerminalNode IGUAL() { return getToken(SimpleParser.IGUAL, 0); }
+		public TerminalNode LIKE() { return getToken(SimpleParser.LIKE, 0); }
 		public ComparativoCadenaContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -684,6 +817,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitComparativoCadena(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitComparativoCadena(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ComparativoCadenaContext comparativoCadena() throws RecognitionException {
@@ -693,14 +831,15 @@ public class SimpleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(118); match(VAR);
 			setState(119);
 			_la = _input.LA(1);
 			if ( !(_la==LIKE || _la==IGUAL) ) {
 			_errHandler.recoverInline(this);
+			} else {
+				consume();
 			}
-			consume();
-			setState(120); match(CADENA);
+			setState(120);
+			match(CADENA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -718,8 +857,8 @@ public class SimpleParser extends Parser {
 		public Object value;
 		public Token NUMERO;
 		public Token VAR;
-		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
 		public TerminalNode NUMERO() { return getToken(SimpleParser.NUMERO, 0); }
+		public TerminalNode VAR() { return getToken(SimpleParser.VAR, 0); }
 		public ExpresionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -732,6 +871,11 @@ public class SimpleParser extends Parser {
 		public void exitRule(ParseTreeListener listener) {
 			if ( listener instanceof SimpleListener ) ((SimpleListener)listener).exitExpresion(this);
 		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof SimpleVisitor ) return ((SimpleVisitor<? extends T>)visitor).visitExpresion(this);
+			else return visitor.visitChildren(this);
+		}
 	}
 
 	public final ExpresionContext expresion() throws RecognitionException {
@@ -743,14 +887,16 @@ public class SimpleParser extends Parser {
 			case NUMERO:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(122); ((ExpresionContext)_localctx).NUMERO = match(NUMERO);
+				setState(122);
+				((ExpresionContext)_localctx).NUMERO = match(NUMERO);
 				((ExpresionContext)_localctx).value =  Integer.parseInt((((ExpresionContext)_localctx).NUMERO!=null?((ExpresionContext)_localctx).NUMERO.getText():null)); 
 				}
 				break;
 			case VAR:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(124); ((ExpresionContext)_localctx).VAR = match(VAR);
+				setState(124);
+				((ExpresionContext)_localctx).VAR = match(VAR);
 				((ExpresionContext)_localctx).value =  (((ExpresionContext)_localctx).VAR!=null?((ExpresionContext)_localctx).VAR.getText():null);
 				}
 				break;
@@ -774,33 +920,33 @@ public class SimpleParser extends Parser {
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
 		"\13\4\f\t\f\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\2\7\2!\n\2\f\2\16\2$\13\2\3"+
 		"\2\3\2\3\2\3\3\3\3\3\3\5\3,\n\3\3\4\3\4\3\4\5\4\61\n\4\3\4\3\4\3\4\3\4"+
-		"\5\4\67\n\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3"+
-		"\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\7\7Q\n\7\f\7\16\7T\13\7\3\7\3\7"+
-		"\3\b\3\b\7\bZ\n\b\f\b\16\b]\13\b\3\b\3\b\3\b\3\b\7\bc\n\b\f\b\16\bf\13"+
-		"\b\3\b\3\b\3\b\5\bk\n\b\3\t\3\t\3\t\3\t\3\t\3\t\5\ts\n\t\3\n\3\n\3\n\3"+
-		"\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\f\u0081\n\f\3\f\2\2\r\2\4\6\b"+
-		"\n\f\16\20\22\24\26\2\5\3\2#%\3\2\25\32\3\2\24\25\u0082\2\30\3\2\2\2\4"+
-		"+\3\2\2\2\6-\3\2\2\2\b:\3\2\2\2\nD\3\2\2\2\fR\3\2\2\2\16j\3\2\2\2\20l"+
-		"\3\2\2\2\22t\3\2\2\2\24x\3\2\2\2\26\u0080\3\2\2\2\30\31\7\t\2\2\31\32"+
-		"\7\n\2\2\32\33\7#\2\2\33\34\7\17\2\2\34\35\7\20\2\2\35\36\7\r\2\2\36\""+
-		"\7\"\2\2\37!\5\4\3\2 \37\3\2\2\2!$\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#%\3\2"+
-		"\2\2$\"\3\2\2\2%&\7\"\2\2&\'\7 \2\2\'\3\3\2\2\2(,\5\n\6\2),\5\b\5\2*,"+
-		"\5\6\4\2+(\3\2\2\2+)\3\2\2\2+*\3\2\2\2,\5\3\2\2\2-\60\7\3\2\2.\61\7\13"+
-		"\2\2/\61\5\16\b\2\60.\3\2\2\2\60/\3\2\2\2\61\62\3\2\2\2\62\63\7\7\2\2"+
-		"\63\66\7#\2\2\64\67\7 \2\2\65\67\5\20\t\2\66\64\3\2\2\2\66\65\3\2\2\2"+
-		"\678\3\2\2\289\b\4\1\29\7\3\2\2\2:;\7\4\2\2;<\7\7\2\2<=\7#\2\2=>\7\f\2"+
-		"\2>?\7#\2\2?@\7\25\2\2@A\7%\2\2AB\7 \2\2BC\b\5\1\2C\t\3\2\2\2DE\7\5\2"+
-		"\2EF\7\b\2\2FG\7#\2\2GH\7\6\2\2HI\7\33\2\2IJ\5\f\7\2JK\7\34\2\2KL\7 \2"+
-		"\2LM\b\6\1\2M\13\3\2\2\2NO\t\2\2\2OQ\7\37\2\2PN\3\2\2\2QT\3\2\2\2RP\3"+
-		"\2\2\2RS\3\2\2\2SU\3\2\2\2TR\3\2\2\2UV\t\2\2\2V\r\3\2\2\2WX\7#\2\2XZ\7"+
-		"\37\2\2YW\3\2\2\2Z]\3\2\2\2[Y\3\2\2\2[\\\3\2\2\2\\^\3\2\2\2][\3\2\2\2"+
-		"^k\7#\2\2_d\7\33\2\2`a\7#\2\2ac\7\37\2\2b`\3\2\2\2cf\3\2\2\2db\3\2\2\2"+
-		"de\3\2\2\2eg\3\2\2\2fd\3\2\2\2gh\7#\2\2hi\3\2\2\2ik\7\34\2\2j[\3\2\2\2"+
-		"j_\3\2\2\2k\17\3\2\2\2lr\7\f\2\2mn\7#\2\2ns\5\22\n\2op\5\24\13\2pq\7 "+
-		"\2\2qs\3\2\2\2rm\3\2\2\2ro\3\2\2\2s\21\3\2\2\2tu\7#\2\2uv\t\3\2\2vw\7"+
-		"%\2\2w\23\3\2\2\2xy\7#\2\2yz\t\4\2\2z{\7$\2\2{\25\3\2\2\2|}\7%\2\2}\u0081"+
-		"\b\f\1\2~\177\7#\2\2\177\u0081\b\f\1\2\u0080|\3\2\2\2\u0080~\3\2\2\2\u0081"+
-		"\27\3\2\2\2\f\"+\60\66R[djr\u0080";
+		"\3\4\3\4\5\49\n\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\5\3\6"+
+		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\7\3\7\7\7S\n\7\f\7\16\7V\13\7\3"+
+		"\7\3\7\3\b\3\b\7\b\\\n\b\f\b\16\b_\13\b\3\b\3\b\3\b\3\b\7\be\n\b\f\b\16"+
+		"\bh\13\b\3\b\3\b\3\b\5\bm\n\b\3\t\3\t\3\t\3\t\3\t\3\t\5\tu\n\t\3\n\3\n"+
+		"\3\n\3\13\3\13\3\13\3\f\3\f\3\f\3\f\5\f\u0081\n\f\3\f\2\2\r\2\4\6\b\n"+
+		"\f\16\20\22\24\26\2\5\3\2$%\3\2\25\32\3\2\24\25\u0082\2\30\3\2\2\2\4+"+
+		"\3\2\2\2\6-\3\2\2\2\b<\3\2\2\2\nF\3\2\2\2\fT\3\2\2\2\16l\3\2\2\2\20n\3"+
+		"\2\2\2\22v\3\2\2\2\24y\3\2\2\2\26\u0080\3\2\2\2\30\31\7\t\2\2\31\32\7"+
+		"\n\2\2\32\33\7#\2\2\33\34\7\17\2\2\34\35\7\20\2\2\35\36\7\r\2\2\36\"\7"+
+		"\"\2\2\37!\5\4\3\2 \37\3\2\2\2!$\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#%\3\2\2"+
+		"\2$\"\3\2\2\2%&\7\"\2\2&\'\7 \2\2\'\3\3\2\2\2(,\5\n\6\2),\5\b\5\2*,\5"+
+		"\6\4\2+(\3\2\2\2+)\3\2\2\2+*\3\2\2\2,\5\3\2\2\2-\60\7\3\2\2.\61\7\13\2"+
+		"\2/\61\5\16\b\2\60.\3\2\2\2\60/\3\2\2\2\61\62\3\2\2\2\62\63\7\7\2\2\63"+
+		"8\7#\2\2\649\7 \2\2\65\66\5\20\t\2\66\67\7 \2\2\679\3\2\2\28\64\3\2\2"+
+		"\28\65\3\2\2\29:\3\2\2\2:;\b\4\1\2;\7\3\2\2\2<=\7\4\2\2=>\7\7\2\2>?\7"+
+		"#\2\2?@\7\f\2\2@A\7#\2\2AB\7\25\2\2BC\7%\2\2CD\7 \2\2DE\b\5\1\2E\t\3\2"+
+		"\2\2FG\7\5\2\2GH\7\b\2\2HI\7#\2\2IJ\7\6\2\2JK\7\33\2\2KL\5\f\7\2LM\7\34"+
+		"\2\2MN\7 \2\2NO\b\6\1\2O\13\3\2\2\2PQ\t\2\2\2QS\7\37\2\2RP\3\2\2\2SV\3"+
+		"\2\2\2TR\3\2\2\2TU\3\2\2\2UW\3\2\2\2VT\3\2\2\2WX\t\2\2\2X\r\3\2\2\2YZ"+
+		"\7#\2\2Z\\\7\37\2\2[Y\3\2\2\2\\_\3\2\2\2][\3\2\2\2]^\3\2\2\2^`\3\2\2\2"+
+		"_]\3\2\2\2`m\7#\2\2af\7\33\2\2bc\7#\2\2ce\7\37\2\2db\3\2\2\2eh\3\2\2\2"+
+		"fd\3\2\2\2fg\3\2\2\2gi\3\2\2\2hf\3\2\2\2ij\7#\2\2jk\3\2\2\2km\7\34\2\2"+
+		"l]\3\2\2\2la\3\2\2\2m\17\3\2\2\2nt\7\f\2\2op\7#\2\2pu\5\22\n\2qr\5\24"+
+		"\13\2rs\7 \2\2su\3\2\2\2to\3\2\2\2tq\3\2\2\2u\21\3\2\2\2vw\t\3\2\2wx\7"+
+		"%\2\2x\23\3\2\2\2yz\t\4\2\2z{\7$\2\2{\25\3\2\2\2|}\7%\2\2}\u0081\b\f\1"+
+		"\2~\177\7#\2\2\177\u0081\b\f\1\2\u0080|\3\2\2\2\u0080~\3\2\2\2\u0081\27"+
+		"\3\2\2\2\f\"+\608T]flt\u0080";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
