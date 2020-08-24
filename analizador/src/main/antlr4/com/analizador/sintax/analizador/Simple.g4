@@ -1,62 +1,44 @@
 grammar Simple;
 
-procedure: CREATE PROCEDURE VAR LENGUAJE SQL AS PROCEDURE_DEL 
-sentenciaSQL* 
-PROCEDURE_DEL P_COMA;
+procedure: VOID P_OPEN P_CLOSE L_OPEN sentencia*  L_CLOSE;
+
+sentencia: (asignacion|ciclo|cicloFor|println|condicional);
+
+asignacion: (VAR IGUAL NUMERO P_COMA) | INTEGER VAR IGUAL NUMERO P_COMA ;
+ciclo: WHILE P_OPEN (condicionnum|condicion| TRUE | FALSE) P_CLOSE L_OPEN sentencia L_CLOSE;
+cicloFor : FOR P_OPEN asignacion condicionnum P_COMA incremento P_CLOSE L_OPEN sentencia L_CLOSE;
+
+println: PRINTLN P_OPEN (expresion | expresionMat) P_CLOSE P_COMA;
 
 
-sentenciaSQL: insertSQL | deleteSQL | selectSQL;
-
-selectSQL: SELECT (ALL | valorestabla  ) 
-FROM VAR (P_COMA | condicion P_COMA)
-
-{System.out.println("SENTENCIA SQL SELECT");};
-
-deleteSQL: DELETE FROM VAR WHERE VAR IGUAL NUMERO P_COMA 
-{System.out.println("SENTENCIA SQL DELETE");}
-;
-
-insertSQL: INSERT INTO VAR VALUES P_OPEN valores P_CLOSE P_COMA
-{System.out.println("SENTENCIA SQL INSERT");}
-;
 
 
-valores: ((NUMERO | CADENA ) COMA)* (NUMERO|CADENA);
-valorestabla : ((VAR COMA)* VAR) | P_OPEN((VAR COMA)* VAR) P_CLOSE ;
-condicion : WHERE (VAR comparativoNumerico | comparativoCadena  P_COMA);
-comparativoNumerico :  (IGUAL | MENORQUE| MAYORQUE | MENORIGUALQUE | MAYORIGUALQUE | DIFERENTE) NUMERO;
-comparativoCadena :  (IGUAL | LIKE) CADENA;
 
-expresion returns [Object value] : 
-
-	NUMERO {$value = Integer.parseInt($NUMERO.text); } 
-	| 
-	VAR  {$value = $VAR.text;}; 
-
-SELECT : 'SELECT';
-DELETE : 'DELETE';
-INSERT : 'INSERT';
-VALUES : 'VALUES';
-
-FROM : 'FROM';
-
-INTO :'INTO';
-CREATE : 'CREATE';
-PROCEDURE : 'PROCEDURE';
-ALL : '*';
-WHERE : 'WHERE';
-AS : 'AS';
-GO : 'GO';
-LENGUAJE : 'LANGUAGE';
-SQL : 'SQL';
+condicional: IF P_OPEN (condicion | condicionnum | TRUE | FALSE) P_CLOSE L_OPEN sentencia L_CLOSE;
 
 
-AND : 'AND';
-OR : 'OR';
-NOT : 'NOT';
-LIKE : 'LIKE';
 
+
+expresion  : NUMERO | VAR | CADENA;
+expresionMat: NUMERO | NUMERO simboloMat NUMERO | INTEGER VAR IGUAL NUMERO;
+operadorCondicional: IGUALA | MENORQUE | MENORIGUALQUE |MAYORIGUALQUE | MAYORQUE | DIFERENTE ;
+
+
+condicionnum: (VAR | NUMERO) operadorCondicional (VAR | NUMERO);
+incremento: VAR SUMA SUMA;
+
+
+condicion: (VAR | CADENA) IGUAL (VAR | CADENA);
+
+simboloMat: SUMA | RESTA | MULT | DIVISION;
+
+
+SUMA: '+';
+RESTA: '-';
+MULT: '*';
+DIVISION: '/';
 IGUAL : '=';
+IGUALA : '==';
 MENORQUE : '<';
 MENORIGUALQUE : '<=';
 MAYORIGUALQUE : '>=';
@@ -70,13 +52,20 @@ L_CLOSE : '}';
 COMA :',';
 P_COMA:';';
 COMILLA: '"';
-PROCEDURE_DEL: '$$';
 
-
+IF: 'if';
+VOID: 'void';
+PRINTLN: 'println';
+FOR: 'for';
+WHILE : 'while';
+TRUE: 'true';
+FALSE: 'false';
+INTEGER: 'int';
+STRING: 'String';
 
 VAR: [a-zA-Z_][a-zA-Z0-9_]*;
 
-CADENA: [""][a-zA-Z0-9_]*[""];
+CADENA: (["])[a-zA-Z0-9_]*(["]);
 
 NUMERO : [0-9] | [0-9][0-9]*;
 

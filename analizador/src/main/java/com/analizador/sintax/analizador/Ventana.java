@@ -15,14 +15,18 @@ public class Ventana extends JFrame implements ActionListener {
 
 	private static final String EXTENSION = "txt";
 	String[] args =null;
-	String prueba = "CREATE PROCEDURE insert_data \n" 
-+"LANGUAGE SQL \n"
-+"AS $$ \n"
-+"INSERT INTO table_uno VALUES (1,3); \n"
-+"INSERT INTO table_uno VALUES (1,EMPLEADO); \n"
-+"INSERT INTO table_uno VALUES (1,EMPLEADO); \n"
-+"INSERT INTO table_uno VALUES (1,EMPLEADO, 234); \n"
-+"$$;";
+	String prueba = 
+	
+	"void () { \n"+
+	      
+	     " println(2+4); \n"+
+	      "println(0); \n"+
+	      
+	      "if(i=3){ \n"+
+	      	"println(6); \n"+
+	      "} \n"+
+	      
+	"} \n";
 	
 	GestorError e = new GestorError();
 			    public Ventana(String[] arg) {
@@ -60,7 +64,7 @@ public class Ventana extends JFrame implements ActionListener {
 
 			        txtResultado.setText("RESULTADO");
 
-			        jLabel2.setText("Analizador sintáctico");
+			        jLabel2.setText("Compilador");
 
 			        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 			        getContentPane().setLayout(layout);

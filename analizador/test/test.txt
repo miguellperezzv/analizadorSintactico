@@ -1,7 +1,16 @@
-CREATE PROCEDURE insert_data 
-LANGUAGE SQL 
-AS $$ 
-INSERT INTO table_uno VALUES (1, 2); 
-INSERT INTO table_uno VALUES (1,"EMPLEADO"); 
+void () { 
+ println(2+4); 
+println(0); 
+if(i==3){ 
+println(6); 
+} 
 
-$$;
+
+ println(2+4); 
+println(0); 
+for(int i=0; i<4; i++)
+{
+println(4);
+}
+println(6); 
+} 

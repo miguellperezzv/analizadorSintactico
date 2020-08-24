@@ -17,41 +17,71 @@ public interface SimpleVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitProcedure(SimpleParser.ProcedureContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SimpleParser#sentenciaSQL}.
+	 * Visit a parse tree produced by {@link SimpleParser#sentencia}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSentenciaSQL(SimpleParser.SentenciaSQLContext ctx);
+	T visitSentencia(SimpleParser.SentenciaContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SimpleParser#selectSQL}.
+	 * Visit a parse tree produced by {@link SimpleParser#asignacion}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSelectSQL(SimpleParser.SelectSQLContext ctx);
+	T visitAsignacion(SimpleParser.AsignacionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SimpleParser#deleteSQL}.
+	 * Visit a parse tree produced by {@link SimpleParser#ciclo}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDeleteSQL(SimpleParser.DeleteSQLContext ctx);
+	T visitCiclo(SimpleParser.CicloContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SimpleParser#insertSQL}.
+	 * Visit a parse tree produced by {@link SimpleParser#cicloFor}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitInsertSQL(SimpleParser.InsertSQLContext ctx);
+	T visitCicloFor(SimpleParser.CicloForContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SimpleParser#valores}.
+	 * Visit a parse tree produced by {@link SimpleParser#println}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitValores(SimpleParser.ValoresContext ctx);
+	T visitPrintln(SimpleParser.PrintlnContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SimpleParser#valorestabla}.
+	 * Visit a parse tree produced by {@link SimpleParser#condicional}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitValorestabla(SimpleParser.ValorestablaContext ctx);
+	T visitCondicional(SimpleParser.CondicionalContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SimpleParser#expresion}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpresion(SimpleParser.ExpresionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SimpleParser#expresionMat}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExpresionMat(SimpleParser.ExpresionMatContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SimpleParser#operadorCondicional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOperadorCondicional(SimpleParser.OperadorCondicionalContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SimpleParser#condicionnum}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondicionnum(SimpleParser.CondicionnumContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link SimpleParser#incremento}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIncremento(SimpleParser.IncrementoContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link SimpleParser#condicion}.
 	 * @param ctx the parse tree
@@ -59,21 +89,9 @@ public interface SimpleVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCondicion(SimpleParser.CondicionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link SimpleParser#comparativoNumerico}.
+	 * Visit a parse tree produced by {@link SimpleParser#simboloMat}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitComparativoNumerico(SimpleParser.ComparativoNumericoContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SimpleParser#comparativoCadena}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitComparativoCadena(SimpleParser.ComparativoCadenaContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link SimpleParser#expresion}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExpresion(SimpleParser.ExpresionContext ctx);
+	T visitSimboloMat(SimpleParser.SimboloMatContext ctx);
 }
